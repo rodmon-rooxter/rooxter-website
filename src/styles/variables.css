@@ -1,0 +1,11 @@
+:root {
+  --color-bg: #080808;
+  --color-primary: #ffd400;
+  --color-text: #ffffff;
+  --font-display: 'IM Fell English', Georgia, serif;
+  --font-heading: 'Alegreya Sans', Arial, sans-serif;
+  --font-body: 'Ek Mukta', Arial, sans-serif;
+  --container: 1600px;
+  --gutter: clamp(24px, 4vw, 72px);
+  --section-space: clamp(96px, 11vw, 176px);
+}
