@@ -1,10 +1,13 @@
+import { useParallax } from '../../hooks/useParallax'
 import { serviceGroups } from '../../data/services'
 
 export default function WhatWeDo() {
+  const parallaxRef = useParallax<HTMLHeadingElement>()
+
   return (
     <section className="section services" aria-labelledby="services-title">
       <div className="site-container">
-        <h2 className="section-title" id="services-title">What We Do</h2>
+        <h2 ref={parallaxRef} className="section-title services-title" id="services-title">What We Do</h2>
         <div className="services-grid">
           {serviceGroups.map((group) => (
             <div className="service-group" key={group.title}>

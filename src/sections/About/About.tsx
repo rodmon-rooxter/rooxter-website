@@ -1,8 +1,7 @@
 export default function About() {
   return (
-    <section className="section about" id="about" aria-labelledby="about-title">
-      <div className="site-container about-grid">
-        <h2 className="section-title" id="about-title">About</h2>
+    <section className="section about" id="about" aria-label="About Rooxter Films">
+      <div className="site-container">
         <div className="about-copy">
           <p className="about-lead">
             Rooxter Films is an independent production studio creating original film,
