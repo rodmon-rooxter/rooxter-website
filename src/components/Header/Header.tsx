@@ -96,7 +96,7 @@ export default function Header() {
         onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
       >
         <img
-          src="/images/logos/rooxter-logo.webp"
+          src={`${import.meta.env.BASE_URL}images/logos/rooxter-logo.webp`}
           width="1392"
           height="1956"
           alt=""

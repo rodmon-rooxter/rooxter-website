@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="hero" id="top" aria-labelledby="hero-title">
       <img
         className="hero-background"
-        src="/images/hero/rooxter-hero.webp"
+        src={`${import.meta.env.BASE_URL}images/hero/rooxter-hero.webp`}
         width="1920"
         height="1080"
         alt=""
