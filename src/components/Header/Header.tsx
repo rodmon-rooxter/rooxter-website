@@ -120,8 +120,12 @@ export default function Header() {
           role="dialog"
           aria-modal="true"
           aria-label="Site navigation"
+          onClick={() => setIsMenuOpen(false)}
         >
-          <nav className="menu-overlay-nav" aria-label="Section navigation">
+          <nav
+            className="menu-overlay-nav"
+            aria-label="Section navigation"
+          >
             {navigation.map((item, index) => (
               <a
                 key={item.href}

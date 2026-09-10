@@ -10,7 +10,6 @@ export default function Contact() {
         <a className="contact-email" href="mailto:info@rooxterfilms.com">
           info@rooxterfilms.com
         </a>
-        <p>Vancouver<br />Toronto<br />Los Angeles</p>
       </div>
     </section>
   )

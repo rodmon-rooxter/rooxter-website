@@ -1,16 +1,8 @@
 @font-face {
-  font-family: 'IM Fell English';
-  src: url('/fonts/im-fell-english/im-fell-english-latin-400-normal.woff') format('woff');
+  font-family: "Ostrich Subtitles";
+  src: url("/fonts/ostrich/ostrich-subtitles.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'IM Fell English';
-  src: url('/fonts/im-fell-english/im-fell-english-latin-400-italic.woff') format('woff');
-  font-style: italic;
-  font-weight: 400;
   font-display: swap;
 }
 

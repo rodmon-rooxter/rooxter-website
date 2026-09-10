@@ -178,18 +178,24 @@ ul {
 }
 
 .menu-overlay-nav a {
-  color: var(--color-text);
+  color: var(--color-primary);
   font-family: var(--font-display);
-  font-size: clamp(54px, 8vw, 126px);
+  font-size: clamp(42px, 6vw, 96px);
   line-height: 0.88;
   letter-spacing: -0.025em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 160ms ease;
+  transition: color 200ms ease, font-size 200ms ease;
+}
+
+.menu-overlay-nav:has(a:hover) a:not(:hover) {
+  font-size: clamp(34px, 4.5vw, 72px);
+  color: rgb(255 255 255 / 35%);
 }
 
 .menu-overlay-nav a:hover,
 .menu-overlay-nav a:focus-visible {
+  font-size: clamp(54px, 8vw, 126px);
   color: var(--color-primary);
 }
 
@@ -313,6 +319,11 @@ ul {
 
 .selected-work {
   padding-top: clamp(20px, 3vw, 48px);
+  padding-bottom: 0;
+}
+
+.projects {
+  padding-top: clamp(16px, 2vw, 32px);
   padding-bottom: var(--section-space);
 }
 
@@ -412,6 +423,7 @@ ul {
 
 .media-placeholder strong {
   max-width: 70%;
+  color: var(--color-primary);
   font-family: var(--font-display);
   font-size: clamp(34px, 5vw, 92px);
   font-weight: 400;
@@ -502,12 +514,45 @@ ul {
 }
 
 .service-group {
+  position: relative;
+  min-height: clamp(320px, 28vw, 440px);
   border-top: 1px solid var(--color-primary);
-  padding-top: 22px;
+  padding: 22px clamp(16px, 1.5vw, 24px) clamp(34px, 4vw, 64px);
+  overflow: hidden;
+  background: linear-gradient(
+    to top,
+    rgb(255 212 0 / 21%) 0%,
+    rgb(255 212 0 / 12%) 30%,
+    rgb(255 212 0 / 4%) 58%,
+    rgb(255 212 0 / 0%) 84%
+  );
+}
+
+.services--motion-ready .service-group {
+  opacity: 0;
+  transform: translate3d(0, 88px, 0);
+  transition:
+    opacity 600ms ease,
+    transform 850ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.services--motion-ready.services--visible .service-group {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.services--motion-ready.services--visible .service-group:nth-child(2) {
+  transition-delay: 140ms;
+}
+
+.services--motion-ready.services--visible .service-group:nth-child(3) {
+  transition-delay: 280ms;
 }
 
 .service-group h3 {
   color: var(--color-primary);
+  font-family: 'Ostrich Subtitles', var(--font-heading);
 }
 
 .service-group ul {
@@ -516,100 +561,119 @@ ul {
   line-height: 1.65;
 }
 
+.team {
+  position: relative;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.team::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 18%,
+    transparent 36%,
+    transparent 62%,
+    #000 84%,
+    #000 100%
+  );
+  content: '';
+  pointer-events: none;
+}
+
+.team > .site-container {
+  position: relative;
+  z-index: 1;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(36px, 5vw, 78px);
+  gap: clamp(36px, 5vw, 78px) clamp(28px, 4vw, 64px);
   margin-top: clamp(80px, 10vw, 150px);
 }
 
-.team-portrait {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-}
-
-.team-portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.portrait-placeholder {
-  position: relative;
-  display: grid;
-  width: 100%;
-  height: 100%;
-  place-items: center;
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
-}
-
-.portrait-placeholder::before,
-.portrait-placeholder::after {
-  position: absolute;
-  background: var(--color-primary);
-  content: '';
-}
-
-.portrait-placeholder::before {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 1px;
-}
-
-.portrait-placeholder::after {
-  top: 50%;
-  right: 0;
-  left: 0;
-  height: 1px;
-}
-
-.portrait-placeholder span {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-}
-
-.portrait-placeholder strong {
-  position: relative;
-  z-index: 1;
-  padding: 0 0.22em;
-  background: var(--color-bg);
-  font-family: var(--font-display);
-  font-size: clamp(90px, 14vw, 220px);
-  font-weight: 400;
-  line-height: 0.8;
-}
-
 .team-member h3 {
-  margin-top: 24px;
+  color: var(--color-primary);
   font-size: clamp(14px, 1.3vw, 20px);
 }
 
 .team-member p {
   margin-top: 6px;
+  color: var(--color-text);
   font-size: clamp(11px, 0.9vw, 14px);
 }
 
+.team-member a {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--color-text);
+  font-size: clamp(11px, 0.9vw, 14px);
+}
+
+.team-member a:hover,
+.team-member a:focus-visible {
+  color: var(--color-primary);
+}
+
 .statement {
+  position: relative;
   min-height: 85svh;
+  overflow: hidden;
+}
+
+.statement-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.statement-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.statement-bg img.active {
+  opacity: 0.5;
+}
+
+.statement-bg::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to bottom, rgb(8 8 8) 0%, transparent 10%),
+    linear-gradient(to top, rgb(8 8 8) 0%, transparent 10%);
+  content: '';
+  pointer-events: none;
+}
+
+.statement-inner {
+  position: relative;
+  z-index: 2;
 }
 
 .contact {
-  min-height: 78svh;
+  min-height: auto;
   padding-block: var(--section-space);
 }
 
 .contact-inner {
   display: flex;
-  min-height: 55svh;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 54px;
+  justify-content: flex-start;
+  gap: clamp(24px, 3vw, 48px);
 }
 
 .contact h2 {
@@ -624,7 +688,7 @@ ul {
 
 .contact-email {
   font-family: var(--font-heading);
-  font-size: clamp(14px, 1.3vw, 20px);
+  font-size: clamp(28px, 2.6vw, 40px);
   line-height: 1;
 }
 
@@ -676,6 +740,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 28px;
+    min-height: clamp(240px, 36vw, 340px);
   }
 
   .service-group ul {
@@ -763,6 +828,11 @@ ul {
 
   .service-group {
     grid-template-columns: 1fr;
+    min-height: 280px;
+  }
+
+  .services-title {
+    transform: none !important;
   }
 
   .service-group ul {
@@ -807,5 +877,10 @@ ul {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .services--motion-ready .service-group {
+    opacity: 1;
+    transform: none;
   }
 }

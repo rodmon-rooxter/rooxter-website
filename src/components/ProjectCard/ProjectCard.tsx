@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react'
 import type { Project, ProjectSlide } from '../../data/projects'
 
-const HOLD_DURATION = 5000
+const MIN_HOLD_DURATION = 4000
+const MAX_HOLD_DURATION = 10000
 const FADE_DURATION = 800
+
+const getRandomHoldDuration = () =>
+  Math.floor(Math.random() * (MAX_HOLD_DURATION - MIN_HOLD_DURATION + 1)) +
+  MIN_HOLD_DURATION
 
 type ProjectCardProps = {
   project: Project
@@ -47,7 +52,7 @@ function ProjectSlideshow({ slides, index }: { slides: ProjectSlide[]; index: nu
   useEffect(() => {
     if (slides.length < 2 || prefersReducedMotion) return
 
-    const duration = phase === 'visible' ? HOLD_DURATION : FADE_DURATION
+    const duration = phase === 'visible' ? getRandomHoldDuration() : FADE_DURATION
     const timer = window.setTimeout(() => {
       if (phase === 'visible') {
         setPhase('fading-out')

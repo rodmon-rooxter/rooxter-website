@@ -7,8 +7,8 @@ export default function Footer() {
           <p>Vancouver · Toronto · Los Angeles</p>
         </div>
         <div className="footer-links" aria-label="Social profiles">
-          <span>Instagram</span>
-          <span>IMDb</span>
+          <a href="https://www.instagram.com/rooxterfilms/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://vimeo.com/user58227036" target="_blank" rel="noopener noreferrer">Vimeo</a>
         </div>
         <p className="copyright">© 2026 Rooxter Films</p>
       </div>

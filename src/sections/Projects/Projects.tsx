@@ -1,17 +1,15 @@
-import { useParallax } from '../../hooks/useParallax'
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
 import { projects } from '../../data/projects'
 
 export default function Projects() {
-  const parallaxRef = useParallax<HTMLHeadingElement>()
+  const additionalProjects = projects.filter((project) => !project.featured)
 
   return (
-    <section className="section projects" aria-labelledby="projects-title">
+    <section className="projects" aria-label="More selected work">
       <div className="site-container">
-        <h2 ref={parallaxRef} className="section-title projects-title" id="projects-title">More Projects</h2>
-        <div className="project-grid">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.title} project={project} index={index} />
+        <div className="featured-list">
+          {additionalProjects.map((project, index) => (
+            <ProjectCard key={project.title} project={project} index={index + 3} featured />
           ))}
         </div>
       </div>
