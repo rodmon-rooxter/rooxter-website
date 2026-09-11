@@ -3,7 +3,7 @@ import { useParallax } from '../../hooks/useParallax'
 import { serviceGroups } from '../../data/services'
 
 export default function WhatWeDo() {
-  const parallaxRef = useParallax<HTMLHeadingElement>()
+  const parallaxRef = useParallax<HTMLHeadingElement>(0.32, 160, 40)
   const sectionRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {

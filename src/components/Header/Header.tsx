@@ -13,6 +13,7 @@ export default function Header() {
   const idleTimer = useRef<number | undefined>(undefined)
   const logoButton = useRef<HTMLButtonElement>(null)
   const firstMenuLink = useRef<HTMLAnchorElement>(null)
+  const shouldFocusMenu = useRef(false)
 
   useEffect(() => {
     const isSectionOneActive = () => {
@@ -52,7 +53,9 @@ export default function Header() {
 
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
-    const focusFrame = requestAnimationFrame(() => firstMenuLink.current?.focus())
+    const focusFrame = requestAnimationFrame(() => {
+      if (shouldFocusMenu.current) firstMenuLink.current?.focus()
+    })
 
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return
@@ -93,7 +96,13 @@ export default function Header() {
         aria-label={isMenuOpen ? 'Close site navigation' : 'Open site navigation'}
         aria-controls="site-menu"
         aria-expanded={isMenuOpen}
-        onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
+        onClick={(event) => {
+          if (!isMenuOpen) {
+            shouldFocusMenu.current = event.detail === 0
+            if (!shouldFocusMenu.current) event.currentTarget.blur()
+          }
+          setIsMenuOpen((isOpen) => !isOpen)
+        }}
       >
         <img
           src={`${import.meta.env.BASE_URL}images/logos/rooxter-logo.webp`}

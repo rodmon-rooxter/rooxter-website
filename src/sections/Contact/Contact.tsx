@@ -1,7 +1,7 @@
 import { useParallax } from '../../hooks/useParallax'
 
 export default function Contact() {
-  const parallaxRef = useParallax<HTMLHeadingElement>()
+  const parallaxRef = useParallax<HTMLHeadingElement>(0.32, 160, 14)
 
   return (
     <section className="contact" id="contact" aria-labelledby="contact-title">

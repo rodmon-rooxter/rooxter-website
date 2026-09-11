@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
 
 const slides = [
-  'hearts-of-stone-02.webp',
-  'martin-clune-04.webp',
-  'breathe-04.webp',
-  'the-searhorse-trainer-01.webp',
-  'ostrich-teaser-03.webp',
-  'revolves-around-02.webp',
-  'rust-and-dust-01.webp',
-  'suffer-04.webp',
-  'thunderbird-01.webp',
-  'unicorn-code-01.webp',
-  'like-this-05.webp',
+  'projects/hearts-of-stone-02.webp',
+  'projects/martin-clune-04.webp',
+  'projects/breathe-04.webp',
+  'selected-work/the-searhorse-trainer-01.webp',
+  'projects/ostrich-teaser-03.webp',
+  'projects/revolves-around-02.webp',
+  'projects/rust-and-dust-01.webp',
+  'selected-work/suffer-04.webp',
+  'projects/thunderbird-01.webp',
+  'projects/unicorn-code-01.webp',
+  'selected-work/like-this-05.webp',
 ]
 
 export default function Statement() {
@@ -31,10 +31,10 @@ export default function Statement() {
   return (
     <section className="statement">
       <div className="statement-bg" aria-hidden="true">
-        {slides.map((filename, index) => (
+        {slides.map((path, index) => (
           <img
-            key={filename}
-            src={`${import.meta.env.BASE_URL}images/projects/${filename}`}
+            key={path}
+            src={`${import.meta.env.BASE_URL}images/${path}`}
             alt=""
             className={index === activeIndex ? 'active' : ''}
             loading={index === 0 ? 'eager' : 'lazy'}

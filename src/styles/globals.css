@@ -324,7 +324,7 @@ ul {
 
 .projects {
   padding-top: clamp(16px, 2vw, 32px);
-  padding-bottom: var(--section-space);
+  padding-bottom: clamp(32px, 4vw, 64px);
 }
 
 .featured-list {
@@ -458,11 +458,11 @@ ul {
 }
 
 .projects-title {
-  font-size: clamp(28px, 3.5vw, 56px);
+  font-size: clamp(56px, 7vw, 112px);
 }
 
 .services-title {
-  font-size: clamp(28px, 3.5vw, 56px);
+  font-size: clamp(56px, 7vw, 112px);
   text-align: right;
 }
 
@@ -490,6 +490,10 @@ ul {
   max-width: 900px;
 }
 
+.about {
+  padding-top: clamp(32px, 4vw, 64px);
+}
+
 .about-lead {
   color: var(--color-primary);
   font-family: var(--font-display);
@@ -513,19 +517,16 @@ ul {
   margin-top: clamp(80px, 10vw, 150px);
 }
 
+.services {
+  padding-top: clamp(64px, 7vw, 112px);
+}
+
 .service-group {
   position: relative;
   min-height: clamp(320px, 28vw, 440px);
   border-top: 1px solid var(--color-primary);
   padding: 22px clamp(16px, 1.5vw, 24px) clamp(34px, 4vw, 64px);
   overflow: hidden;
-  background: linear-gradient(
-    to top,
-    rgb(255 212 0 / 21%) 0%,
-    rgb(255 212 0 / 12%) 30%,
-    rgb(255 212 0 / 4%) 58%,
-    rgb(255 212 0 / 0%) 84%
-  );
 }
 
 .services--motion-ready .service-group {
@@ -665,7 +666,7 @@ ul {
 
 .contact {
   min-height: auto;
-  padding-block: var(--section-space);
+  padding-block: var(--section-space) clamp(32px, 4vw, 64px);
 }
 
 .contact-inner {
@@ -698,7 +699,7 @@ ul {
 }
 
 .site-footer {
-  padding-block: clamp(72px, 9vw, 140px) clamp(36px, 5vw, 72px);
+  padding-block: clamp(36px, 4vw, 64px) clamp(24px, 3vw, 48px);
 }
 
 .footer-inner {
@@ -831,10 +832,6 @@ ul {
     min-height: 280px;
   }
 
-  .services-title {
-    transform: none !important;
-  }
-
   .service-group ul {
     margin-top: 18px;
   }
@@ -845,10 +842,11 @@ ul {
 
   .contact {
     min-height: auto;
+    padding-block: 72px 24px;
   }
 
   .contact-inner {
-    min-height: 60svh;
+    min-height: 0;
   }
 
   .contact-email {
@@ -858,6 +856,10 @@ ul {
   .footer-inner {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+
+  .site-footer {
+    padding-block: 32px 24px;
   }
 
   .copyright {

@@ -3,7 +3,7 @@ import TeamMember from '../../components/TeamMember/TeamMember'
 import { team } from '../../data/team'
 
 export default function Team() {
-  const parallaxRef = useParallax<HTMLHeadingElement>()
+  const parallaxRef = useParallax<HTMLHeadingElement>(0.32, 160, 36)
   const backgroundImage = `url("${import.meta.env.BASE_URL}images/team/team-bg-01.webp")`
 
   return (

@@ -3,7 +3,11 @@ import { useEffect, useRef } from 'react'
 /**
  * Adds a restrained vertical drift while preserving the page's natural scroll.
  */
-export function useParallax<T extends HTMLElement>(speed = 0.32, maxOffset = 160) {
+export function useParallax<T extends HTMLElement>(
+  speed = 0.32,
+  maxOffset = 160,
+  mobileMaxOffset = maxOffset,
+) {
   const ref = useRef<T>(null)
 
   useEffect(() => {
@@ -11,6 +15,7 @@ export function useParallax<T extends HTMLElement>(speed = 0.32, maxOffset = 160
     if (!el) return
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const mobileViewport = window.matchMedia('(max-width: 680px)')
     const initialTransform = el.style.transform
     let rafId: number | null = null
     let currentOffset = 0
@@ -34,7 +39,8 @@ export function useParallax<T extends HTMLElement>(speed = 0.32, maxOffset = 160
       const naturalCentre = rect.top - currentOffset + rect.height / 2
       const viewportCentre = window.innerHeight / 2
       const rawOffset = (viewportCentre - naturalCentre) * speed
-      const targetOffset = Math.max(-maxOffset, Math.min(maxOffset, rawOffset))
+      const activeMaxOffset = mobileViewport.matches ? mobileMaxOffset : maxOffset
+      const targetOffset = Math.max(-activeMaxOffset, Math.min(activeMaxOffset, rawOffset))
 
       if (isInitialFrame) {
         currentOffset = targetOffset
@@ -60,11 +66,13 @@ export function useParallax<T extends HTMLElement>(speed = 0.32, maxOffset = 160
     window.addEventListener('scroll', requestUpdate, { passive: true })
     window.addEventListener('resize', requestUpdate)
     reducedMotion.addEventListener('change', requestUpdate)
+    mobileViewport.addEventListener('change', requestUpdate)
 
     return () => {
       window.removeEventListener('scroll', requestUpdate)
       window.removeEventListener('resize', requestUpdate)
       reducedMotion.removeEventListener('change', requestUpdate)
+      mobileViewport.removeEventListener('change', requestUpdate)
 
       if (rafId !== null) {
         cancelAnimationFrame(rafId)
@@ -72,7 +80,7 @@ export function useParallax<T extends HTMLElement>(speed = 0.32, maxOffset = 160
 
       reset()
     }
-  }, [maxOffset, speed])
+  }, [maxOffset, mobileMaxOffset, speed])
 
   return ref
 }
