@@ -5,13 +5,16 @@ export default function Hero() {
 
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
-      <img
+      <video
         className="hero-background"
-        src={`${import.meta.env.BASE_URL}images/hero/rooxter-hero.webp`}
+        src={`${import.meta.env.BASE_URL}videos/hero/rooxter-hero-v01.mp4`}
         width="1920"
         height="1080"
-        alt=""
-        fetchPriority="high"
+        autoPlay
+        loop
+        muted
+        playsInline
+        aria-hidden="true"
       />
       <div className="site-container hero-copy">
         <div ref={parallaxRef} className="parallax-text">

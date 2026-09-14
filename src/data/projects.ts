@@ -37,7 +37,7 @@ const slides = (
 export const projects: Project[] = [
   {
     title: 'The Seahorse Trainer',
-    credit: 'Rooxter Films — Direction & VFX',
+    credit: 'Rooxter Films',
     slides: slides('selected-work', 'the-searhorse-trainer', 5, 'The Seahorse Trainer'),
     featured: true,
   },
@@ -48,9 +48,9 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    title: 'Like This',
-    credit: 'LLOREN — Direction & Post-Production',
-    slides: slides('selected-work', 'like-this', 5, 'Like This'),
+    title: 'Like This (Lloren)',
+    credit: 'Rooxter Films',
+    slides: slides('selected-work', 'like-this', 5, 'Like This (Lloren)'),
     featured: true,
   },
   {
@@ -61,7 +61,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Rust and Dust',
-    credit: 'Rooxter Films — Direction & VFX',
+    credit: 'Rooxter Films',
     slides: slides('projects', 'rust-and-dust', 5, 'Rust and Dust'),
     featured: false,
   },
@@ -72,32 +72,32 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    title: 'Revolves Around You',
-    credit: 'The Dennis Jones Band — Direction & Post-Production',
-    slides: slides('projects', 'revolves-around', 5, 'Revolves Around You'),
+    title: "Seen't the Devil (Derek Shields)",
+    credit: 'Rooxter Films',
+    slides: slides('projects', 'seen-the-devil', 5, "Seen't the Devil (Derek Shields)"),
     featured: false,
   },
   {
-    title: 'Breathe',
-    credit: 'LLOREN — Direction & Post-Production',
-    slides: slides('projects', 'breathe', 5, 'Breathe'),
+    title: 'Breathe (Lloren)',
+    credit: 'Rooxter Films',
+    slides: slides('projects', 'breathe', 5, 'Breathe (Lloren)'),
     featured: false,
   },
   {
     title: 'If Martin Clune Wore Lipgloss',
-    credit: 'Amy McLeish — Cinematography & Post-Production',
+    credit: 'Dir. Amy McLeish — Cinematography and Post Services',
     slides: slides('projects', 'martin-clune', 5, 'If Martin Clune Wore Lipgloss'),
     featured: false,
   },
   {
     title: 'Thunderbird',
-    credit: 'Nicholas Treeshin — VFX Supervision',
+    credit: 'Dir. Nicholas Treeshin — VFX Services',
     slides: slides('projects', 'thunderbird', 4, 'Thunderbird'),
     featured: false,
   },
   {
     title: 'Hearts of Stone',
-    credit: 'Tom Van Avermaet — VFX Supervision',
+    credit: 'Dir. Tom Van Avermaet — VFX Services',
     slides: slides('projects', 'hearts-of-stone', 5, 'Hearts of Stone'),
     featured: false,
   },

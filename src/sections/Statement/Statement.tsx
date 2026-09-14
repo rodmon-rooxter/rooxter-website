@@ -6,7 +6,7 @@ const slides = [
   'projects/breathe-04.webp',
   'selected-work/the-searhorse-trainer-01.webp',
   'projects/ostrich-teaser-03.webp',
-  'projects/revolves-around-02.webp',
+  'projects/seen-the-devil-02.webp',
   'projects/rust-and-dust-01.webp',
   'selected-work/suffer-04.webp',
   'projects/thunderbird-01.webp',
