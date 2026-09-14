@@ -88,7 +88,7 @@ function ProjectSlideshow({ slides, index }: { slides: ProjectSlide[]; index: nu
 }
 
 function FeaturedProjectCard({ project, index }: Omit<ProjectCardProps, 'featured'>) {
-  const metadata = [project.category, project.year].filter(Boolean).join(' · ')
+  const metadata = [project.credit, project.year].filter(Boolean).join(' · ')
   const slides = project.slides ?? []
 
   return (
@@ -109,7 +109,7 @@ export default function ProjectCard({ project, index, featured = false }: Projec
     return <FeaturedProjectCard project={project} index={index} />
   }
 
-  const metadata = [project.category, project.year].filter(Boolean).join(' · ')
+  const metadata = [project.credit, project.year].filter(Boolean).join(' · ')
 
   return (
     <article className="project-card">

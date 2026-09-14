@@ -5,7 +5,7 @@ export type ProjectSlide = {
 
 export type Project = {
   title: string
-  category: string
+  credit: string
   year?: string
   image?: string
   imageAlt?: string
@@ -37,67 +37,67 @@ const slides = (
 export const projects: Project[] = [
   {
     title: 'The Seahorse Trainer',
-    category: 'Rooxter Films',
+    credit: 'Rooxter Films — Direction & VFX',
     slides: slides('selected-work', 'the-searhorse-trainer', 5, 'The Seahorse Trainer'),
     featured: true,
   },
   {
     title: 'Suffer',
-    category: 'Wallop Films',
+    credit: 'Wallop Films — VFX Services',
     slides: slides('selected-work', 'suffer', 5, 'Suffer'),
     featured: true,
   },
   {
     title: 'Like This',
-    category: 'Lloren',
+    credit: 'LLOREN — Direction & Post-Production',
     slides: slides('selected-work', 'like-this', 5, 'Like This'),
     featured: true,
   },
   {
     title: 'Ostrich Boy',
-    category: 'Rooxter Films',
+    credit: 'Rooxter Films — Feature Development',
     slides: slides('projects', 'ostrich-teaser', 5, 'Ostrich Boy'),
     featured: false,
   },
   {
     title: 'Rust and Dust',
-    category: 'Rooxter Films',
+    credit: 'Rooxter Films — Direction & VFX',
     slides: slides('projects', 'rust-and-dust', 5, 'Rust and Dust'),
     featured: false,
   },
   {
     title: 'Unicorn Code',
-    category: 'Wallop Films',
+    credit: 'Wallop Films — VFX Services',
     slides: slides('projects', 'unicorn-code', 5, 'Unicorn Code'),
     featured: false,
   },
   {
     title: 'Revolves Around You',
-    category: 'The Dennis Jones Band',
+    credit: 'The Dennis Jones Band — Direction & Post-Production',
     slides: slides('projects', 'revolves-around', 5, 'Revolves Around You'),
     featured: false,
   },
   {
     title: 'Breathe',
-    category: 'Lloren',
+    credit: 'LLOREN — Direction & Post-Production',
     slides: slides('projects', 'breathe', 5, 'Breathe'),
     featured: false,
   },
   {
     title: 'If Martin Clune Wore Lipgloss',
-    category: 'Amy Mcleish',
+    credit: 'Amy McLeish — Cinematography & Post-Production',
     slides: slides('projects', 'martin-clune', 5, 'If Martin Clune Wore Lipgloss'),
     featured: false,
   },
   {
     title: 'Thunderbird',
-    category: 'Nicholas Treeshin',
+    credit: 'Nicholas Treeshin — VFX Supervision',
     slides: slides('projects', 'thunderbird', 4, 'Thunderbird'),
     featured: false,
   },
   {
     title: 'Hearts of Stone',
-    category: 'Tom Van Avermaet',
+    credit: 'Tom Van Avermaet — VFX Supervision',
     slides: slides('projects', 'hearts-of-stone', 5, 'Hearts of Stone'),
     featured: false,
   },

@@ -375,6 +375,7 @@ ul {
 
 .project-overlay h3 {
   max-width: 52%;
+  color: var(--color-primary);
   font-family: var(--font-heading);
   font-size: clamp(22px, 2vw, 32px);
   font-weight: 400;
@@ -386,6 +387,7 @@ ul {
 .project-overlay p {
   max-width: 52%;
   margin-top: clamp(10px, 1.2vw, 18px);
+  color: var(--color-text);
   font-size: clamp(15px, 1.15vw, 18px);
   letter-spacing: 0.15em;
 }
@@ -455,6 +457,14 @@ ul {
 .team-member p {
   font-size: clamp(16px, 1.2vw, 19px);
   letter-spacing: 0.04em;
+}
+
+.project-details h3 {
+  color: var(--color-primary);
+}
+
+.project-details p {
+  color: var(--color-text);
 }
 
 .projects-title {

@@ -5,15 +5,15 @@ export type ServiceGroup = {
 
 export const serviceGroups: ServiceGroup[] = [
   {
-    title: 'Pre-production',
+    title: 'DEVELOPMENT',
     services: ['Concept Art', 'Visual Development', 'Storyboarding'],
   },
   {
-    title: 'Production',
-    services: ['Directing', 'Cinematography'],
+    title: 'PRODUCTION',
+    services: ['Directing', 'Cinematography', 'VFX Supervision'],
   },
   {
-    title: 'Post',
-    services: ['Editing', 'Visual Effects', 'Color', 'Sound Design'],
+    title: 'POST-PRODUCTION',
+    services: ['Editing', 'VFX', 'VFX Consultation', 'Animation', 'Color', 'Sound Design'],
   },
 ]
