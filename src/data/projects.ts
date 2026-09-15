@@ -101,4 +101,22 @@ export const projects: Project[] = [
     slides: slides('projects', 'hearts-of-stone', 5, 'Hearts of Stone'),
     featured: false,
   },
+  {
+    title: "Slow n' Steady",
+    credit: 'Rooxter Films',
+    slides: slides('projects', 'slow-n-steady', 5, "Slow n' Steady"),
+    featured: false,
+  },
+  {
+    title: 'Engine',
+    credit: 'Echobend — VFX services',
+    slides: slides('projects', 'engine', 5, 'Engine'),
+    featured: false,
+  },
+  {
+    title: 'DreamPack',
+    credit: 'Echobend — VFX services',
+    slides: slides('projects', 'dreampack', 5, 'DreamPack'),
+    featured: false,
+  },
 ]
