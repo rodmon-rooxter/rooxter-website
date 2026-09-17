@@ -72,6 +72,12 @@ export const projects: Project[] = [
     featured: false,
   },
   {
+    title: 'Revolves Around You (The Dennis Jones Band)',
+    credit: 'Rooxter Films',
+    slides: slides('projects', 'revolves-around', 5, 'Revolves Around You (The Dennis Jones Band)'),
+    featured: false,
+  },
+  {
     title: "Seen't the Devil (Derek Shields)",
     credit: 'Rooxter Films',
     slides: slides('projects', 'seen-the-devil', 5, "Seen't the Devil (Derek Shields)"),
