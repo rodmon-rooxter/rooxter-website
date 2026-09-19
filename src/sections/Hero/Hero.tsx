@@ -18,7 +18,7 @@ export default function Hero() {
       />
       <div className="site-container hero-copy">
         <div ref={parallaxRef} className="parallax-text">
-          <h1 id="hero-title">We make stories.</h1>
+          <h1 id="hero-title">Rooxter films</h1>
           <p>Film · Animation · Visual Effects</p>
         </div>
       </div>

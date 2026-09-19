@@ -6,7 +6,7 @@ export type ServiceGroup = {
 export const serviceGroups: ServiceGroup[] = [
   {
     title: 'DEVELOPMENT',
-    services: ['Concept Art', 'Visual Development', 'Storyboarding'],
+    services: ['Concept Art', 'Visual Development', 'Storyboarding', '3D Previsualization'],
   },
   {
     title: 'PRODUCTION',
@@ -14,6 +14,6 @@ export const serviceGroups: ServiceGroup[] = [
   },
   {
     title: 'POST-PRODUCTION',
-    services: ['Editing', 'VFX', 'VFX Consultation', 'Animation', 'Color', 'Sound Design'],
+    services: ['Editing', 'VFX', 'VFX Consulting', 'Animation', 'Color', 'Sound Design'],
   },
 ]

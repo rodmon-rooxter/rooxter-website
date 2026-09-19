@@ -90,9 +90,9 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    title: 'If Martin Clune Wore Lipgloss',
+    title: 'If Martin Clunes Wore Lipgloss',
     credit: 'Dir. Amy McLeish — Cinematography and Post Services',
-    slides: slides('projects', 'martin-clune', 5, 'If Martin Clune Wore Lipgloss'),
+    slides: slides('projects', 'martin-clune', 5, 'If Martin Clunes Wore Lipgloss'),
     featured: false,
   },
   {
