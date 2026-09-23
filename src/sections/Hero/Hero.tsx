@@ -8,6 +8,7 @@ export default function Hero() {
       <video
         className="hero-background"
         src={`${import.meta.env.BASE_URL}videos/hero/rooxter-hero-v01.mp4`}
+        poster={`${import.meta.env.BASE_URL}images/hero/rooxter-hero.webp`}
         width="1920"
         height="1080"
         autoPlay
